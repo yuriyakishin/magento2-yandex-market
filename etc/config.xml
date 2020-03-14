@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <yandex_market>
+            <shop>
+                <active>0</active>
+                <name></name>
+                <company></company>
+                <url></url>
+                <agency></agency>
+                <email></email>
+                <allowed_methods></allowed_methods>
+            </shop>
+            <offer>
+                <category></category>
+                <name>name</name>
+                <vendor></vendor>
+                <vendorCode></vendorCode>
+                <description>description</description>
+                <country_of_origin></country_of_origin>
+                <manufacturer_warranty></manufacturer_warranty>
+                <param></param>
+                <param_label>frontend</param_label>
+                <param_value>frontend</param_value>
+            </offer>
+        </yandex_market>
+    </default>
+</config>

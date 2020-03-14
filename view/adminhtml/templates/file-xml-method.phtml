@@ -1,0 +1,26 @@
+<p><a href="<?= $block->getFileUrl() ?>" target="_blank"><?= $block->getFileUrl() ?></a></p>
+<p>Создать прайс xml: <strong><a id="update-xml-file" href="javascript:void(0)">создать</a></strong></p>
+
+<script>
+    require([
+        'jquery',
+        'mage/storage',
+        'mage/url'
+    ], function ($, storage, url) {
+        $('#update-xml-file').click(function () {
+            $(this).text('идет создание прайса...');
+            $(this).unbind('click');
+            storage.get(                    
+                    '<?= $block->getUrl('admin_yandex_market/filexml/create'); ?>',
+                    ).done(
+                    function (data) {
+                        $('#update-xml-file').text('готово!');
+                    }
+            ).fail(
+                    function () {
+                        alert("Ошибка загрузки данных.");
+                    }
+            );
+        });
+    });
+</script>

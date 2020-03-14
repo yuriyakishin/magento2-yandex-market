@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Yu\YandexMarket\Api\Data\MarketInterface" type="Yu\YandexMarket\Model\Market" />
+    <preference for="Yu\YandexMarket\Api\Data\CategoryInterface" type="Yu\YandexMarket\Model\Category" />
+    <preference for="Yu\YandexMarket\Api\Data\ProductInterface" type="Yu\YandexMarket\Model\Product" />
+    <preference for="Yu\YandexMarket\Api\MarketBuilderInterface" type="Yu\YandexMarket\Model\MarketBuilder" />
+    <preference for="Yu\YandexMarket\Api\CreateXMLFileInterface" type="Yu\YandexMarket\Service\CreateXMLFile" />
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="YandexMarketUpdateXMLFile" xsi:type="object">Yu\YandexMarket\Console\Command\UpdateXMLFileCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

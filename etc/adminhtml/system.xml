@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="yandex_market" translate="label" type="text" sortOrder="150" showInDefault="0" showInWebsite="0" showInStore="1">
+            <label>Яндекс Маркет</label>
+            <tab>catalog</tab>
+            <resource>Magento_Config::catalog</resource>
+            <group id="shop" translate="label" type="text" sortOrder="1" showInDefault="0" showInWebsite="0" showInStore="1">
+                <label>Общие настройки для Яндекс Маркета</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Включить</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Короткое название магазина</label>
+                    <comment>Короткое название магазина. В названии нельзя использовать слова, которые не относятся к наименованию магазина (например «лучший», «дешевый»), указывать номер телефона и т. п.</comment>
+                </field>
+                <field id="company" translate="label" type="text" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Полное наименование компании</label>
+                    <comment>Полное наименование компании, владеющей магазином. Не публикуется, используется для внутренней идентификации.</comment>
+                </field>
+                <field id="url" translate="label" type="text" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>URL магазина</label>
+                    <comment>URL главной страницы магазина. Максимальная длина ссылки — 512 символов.</comment>
+                </field>
+                <field id="agency" translate="label" type="text" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Наименование агентства техподдержки</label>
+                    <comment>Наименование агентства, которое оказывает техническую поддержку магазину и отвечает за работоспособность сайта.</comment>
+                </field>
+                <field id="email" translate="label" type="text" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Контактный адрес разработчиков или агентства</label>
+                    <comment>Контактный адрес разработчиков CMS или агентства, осуществляющего техподдержку.</comment>
+                </field>
+                <field id="allowed_methods" translate="label" type="multiselect" sortOrder="60" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Варианты генерации прайс-листа</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Method</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <comment>Вариант генерации XML по прямой ссылке рекомендуется использовать только для отладки прайса. В рабочем режиме рекомендуется использовать XML файл.</comment>
+                </field>
+                <field id="notes_file_xml" translate="label" sortOrder="70" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Путь к файлу XML</label>
+                    <frontend_model>Yu\YandexMarket\Block\Adminhtml\System\Config\FileXMLMethod</frontend_model>
+                </field>
+                <field id="notes_url_xml" translate="label" sortOrder="70" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Прямая ссылка на генерацию XML</label>
+                    <frontend_model>Yu\YandexMarket\Block\Adminhtml\System\Config\UrlXMLMethod</frontend_model>
+                </field>
+            </group>
+            <group id="offer" translate="label" type="text" sortOrder="1" showInDefault="0" showInWebsite="0" showInStore="1">
+                <label>Настройки каталога для Яндекс Маркета</label>
+                <field id="category" translate="label" type="multiselect" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Категории для экспорта в прайс</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Category</source_model>
+                    <comment>Категории товаров которые будут экспортироватьсяв прайс для Яндекс Маркета.</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="name" translate="label" type="select" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Наименование</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Attribute</source_model>
+                    <comment>name: Название товара</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="vendor" translate="label" type="select" sortOrder="30" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Производитель</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Attribute</source_model>
+                    <comment>vendor: Название производителя.</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="vendor_code" translate="label" type="select" sortOrder="40" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Код производителя</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Attribute</source_model>
+                    <comment>vendorCode: Код производителя для данного товара.</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="description" translate="label" type="select" sortOrder="50" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Описание предложения</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Attribute</source_model>
+                    <comment>description: Описание предложения. Длина текста не более 3000 символов (включая знаки препинания).</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="country_of_origin" translate="label" type="select" sortOrder="60" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Страна производства</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Attribute</source_model>
+                    <comment>country_of_origin: Страна производства товара.</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="manufacturer_warranty" translate="label" type="select" sortOrder="70" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Официальная гарантия</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Attribute</source_model>
+                    <comment><![CDATA[manufacturer_warranty: Официальная гарантия производителя.<br/>Возможные значения:<br/>true — товар имеет официальную гарантию производителя;<br/>false — товар не имеет официальной гарантии производителя.]]></comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="param" translate="label" type="multiselect" sortOrder="80" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Дополнительные параметры</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\Param</source_model>
+                    <comment>param: Все важные характеристики товара — цвет, размер, объем, материал, вес, возраст, пол, и т. д.</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="param_label" translate="label" type="select" sortOrder="90" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Наименование параметра брать из</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\ParamLabel</source_model>
+                    <comment>В качестве name параметра можно использовать наименование из фронтэнда или бэкэнда.</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <!--field id="param_value" translate="label" type="select" sortOrder="100" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Значение параметра брать из</label>
+                    <source_model>Yu\YandexMarket\Model\Config\Source\ParamValue</source_model>
+                    <comment>В качестве значения параметра можно использовать значение из фронтэнда или бэкэнда.</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field-->
+            </group>
+        </section>
+    </system>
+</config>
