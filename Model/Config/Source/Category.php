@@ -2,7 +2,7 @@
 
 namespace Yu\YandexMarket\Model\Config\Source;
 
-class Category implements \Magento\Shipping\Model\Carrier\Source\GenericInterface
+class Category implements \Magento\Framework\Data\OptionSourceInterface
 {
 
     /**

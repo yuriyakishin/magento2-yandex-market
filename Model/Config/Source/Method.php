@@ -5,7 +5,7 @@ namespace Yu\YandexMarket\Model\Config\Source;
 /**
  * Method source
  */
-class Method implements \Magento\Shipping\Model\Carrier\Source\GenericInterface
+class Method implements \Magento\Framework\Data\OptionSourceInterface
 {
 
     /**

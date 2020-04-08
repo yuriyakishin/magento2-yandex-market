@@ -2,7 +2,7 @@
 
 namespace Yu\YandexMarket\Model\Config\Source;
 
-class ParamLabel implements \Magento\Shipping\Model\Carrier\Source\GenericInterface
+class ParamLabel implements \Magento\Framework\Data\OptionSourceInterface
 {
     /**
      * Returns array to be used in select on back-end
