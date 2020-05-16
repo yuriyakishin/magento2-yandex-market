@@ -20,7 +20,8 @@ class PriceArray implements \Yu\YandexMarket\Api\PriceInterface
         $this->marketBuilder = $marketBuilder;
     }
 
-    public function getPrice()
+    /** TODO function getPrice **/
+    public function getPrice($storeId = null)
     {
         /** @var array */
         $price = array();
